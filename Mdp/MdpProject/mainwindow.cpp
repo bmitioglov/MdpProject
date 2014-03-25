@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "qmessagebox.h"
 #include "dialog.h"
+#include <QShortcut>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,4 +17,10 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    Dialog *d = new Dialog();
+      d -> show();
 }
