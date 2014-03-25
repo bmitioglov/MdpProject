@@ -3,6 +3,8 @@
 
 int main(int argc, char *argv[])
 {
+	printf("123\n");
+
     QApplication a(argc, argv);
     MainWindow w;
 
