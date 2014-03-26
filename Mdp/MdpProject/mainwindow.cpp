@@ -24,7 +24,7 @@ void MainWindow::on_pushButton_clicked()
 {
     Dialog *d = new Dialog();
       d -> show();
-       QMessageBox::information(this, "123", prop);
+       //QMessageBox::information(this, "123", prop);
 }
 
 void MainWindow::on_comboBox_currentTextChanged()
