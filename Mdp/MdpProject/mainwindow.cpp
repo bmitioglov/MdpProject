@@ -13,7 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 }
 
-
+QString prop;
+QString country;
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -23,4 +24,16 @@ void MainWindow::on_pushButton_clicked()
 {
     Dialog *d = new Dialog();
       d -> show();
+       QMessageBox::information(this, "123", prop);
+}
+
+void MainWindow::on_comboBox_currentTextChanged()
+{
+   prop = ui->comboBox->currentText();
+   //QMessageBox::information(this, "123", country);
+}
+
+void MainWindow::on_comboBox_2_currentTextChanged()
+{
+   country =ui->comboBox_2->currentText();
 }

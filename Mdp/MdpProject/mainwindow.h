@@ -19,6 +19,10 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_comboBox_currentTextChanged();
+
+    void on_comboBox_2_currentTextChanged();
+
 private:
     Ui::MainWindow *ui;
 };

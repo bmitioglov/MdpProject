@@ -80,6 +80,11 @@
     </property>
     <item>
      <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Валяться на пляже</string>
      </property>
     </item>
@@ -153,6 +158,89 @@
     </property>
     <property name="text">
      <string>Показать</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_2">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>180</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string/>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Австралия</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Англия</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Америка</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Беларусь</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Болгария</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Германия</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Греция</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Испания</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Казахстан</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Норвегия</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Россия</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>140</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Я нахожусь в стране:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>

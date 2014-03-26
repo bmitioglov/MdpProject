@@ -15,5 +15,5 @@ Dialog::~Dialog()
 
 void Dialog::on_buttonBox_accepted()
 {
-    QMessageBox::information(this, "123", "31");
+
 }

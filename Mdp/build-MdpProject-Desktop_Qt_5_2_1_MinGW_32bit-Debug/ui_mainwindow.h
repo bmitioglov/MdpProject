@@ -33,6 +33,8 @@ public:
     QLabel *label_2;
     QComboBox *comboBox;
     QPushButton *pushButton;
+    QComboBox *comboBox_2;
+    QLabel *label_3;
     QMenuBar *menuBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -66,6 +68,12 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(210, 220, 111, 31));
         pushButton->setFont(font);
+        comboBox_2 = new QComboBox(centralWidget);
+        comboBox_2->setObjectName(QStringLiteral("comboBox_2"));
+        comboBox_2->setGeometry(QRect(200, 180, 121, 21));
+        label_3 = new QLabel(centralWidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setGeometry(QRect(190, 140, 161, 31));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -84,6 +92,7 @@ public:
         label_2->setText(QApplication::translate("MainWindow", "\320\245\320\276\321\207\321\203: ", 0));
         comboBox->clear();
         comboBox->insertItems(0, QStringList()
+         << QString()
          << QApplication::translate("MainWindow", "\320\222\320\260\320\273\321\217\321\202\321\214\321\201\321\217 \320\275\320\260 \320\277\320\273\321\217\320\266\320\265", 0)
          << QApplication::translate("MainWindow", "\320\236\321\201\320\274\320\260\321\202\321\200\320\270\320\262\320\260\321\202\321\214 \320\264\320\276\321\201\321\202\320\276\320\277\321\200\320\270\320\274\320\265\321\207\320\260\321\202\320\265\320\273\321\214\320\275\320\276\321\201\321\202\320\270", 0)
          << QApplication::translate("MainWindow", "\320\232\320\260\321\202\320\260\321\202\321\214\321\201\321\217 \320\275\320\260 \320\273\321\213\320\266\320\260\321\205 \320\270 \321\201\320\275\320\276\321\203\320\261\320\276\321\200\320\264\320\265", 0)
@@ -97,6 +106,22 @@ public:
          << QApplication::translate("MainWindow", "\320\236\321\202\320\264\321\213\321\205\320\260\321\202\321\214 \320\262\321\201\320\265\320\271 \321\201\320\265\320\274\321\214\321\221\320\271", 0)
         );
         pushButton->setText(QApplication::translate("MainWindow", "\320\237\320\276\320\272\320\260\320\267\320\260\321\202\321\214", 0));
+        comboBox_2->clear();
+        comboBox_2->insertItems(0, QStringList()
+         << QString()
+         << QApplication::translate("MainWindow", "\320\220\320\262\321\201\321\202\321\200\320\260\320\273\320\270\321\217", 0)
+         << QApplication::translate("MainWindow", "\320\220\320\275\320\263\320\273\320\270\321\217", 0)
+         << QApplication::translate("MainWindow", "\320\220\320\274\320\265\321\200\320\270\320\272\320\260", 0)
+         << QApplication::translate("MainWindow", "\320\221\320\265\320\273\320\260\321\200\321\203\321\201\321\214", 0)
+         << QApplication::translate("MainWindow", "\320\221\320\276\320\273\320\263\320\260\321\200\320\270\321\217", 0)
+         << QApplication::translate("MainWindow", "\320\223\320\265\321\200\320\274\320\260\320\275\320\270\321\217", 0)
+         << QApplication::translate("MainWindow", "\320\223\321\200\320\265\321\206\320\270\321\217", 0)
+         << QApplication::translate("MainWindow", "\320\230\321\201\320\277\320\260\320\275\320\270\321\217", 0)
+         << QApplication::translate("MainWindow", "\320\232\320\260\320\267\320\260\321\205\321\201\321\202\320\260\320\275", 0)
+         << QApplication::translate("MainWindow", "\320\235\320\276\321\200\320\262\320\265\320\263\320\270\321\217", 0)
+         << QApplication::translate("MainWindow", "\320\240\320\276\321\201\321\201\320\270\321\217", 0)
+        );
+        label_3->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:11pt;\">\320\257 \320\275\320\260\321\205\320\276\320\266\321\203\321\201\321\214 \320\262 \321\201\321\202\321\200\320\260\320\275\320\265:</span></p></body></html>", 0));
     } // retranslateUi
 
 };
