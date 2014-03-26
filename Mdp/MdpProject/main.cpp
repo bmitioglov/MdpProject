@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-	printf("123\n");
+	printf("common!\n");
 
     QApplication a(argc, argv);
     MainWindow w;
