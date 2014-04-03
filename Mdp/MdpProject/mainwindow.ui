@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>548</width>
-    <height>439</height>
+    <height>458</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Holiday Helper</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QLabel" name="label">
@@ -38,8 +38,8 @@
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>370</y>
+      <x>210</x>
+      <y>290</y>
       <width>118</width>
       <height>23</height>
      </rect>
@@ -72,7 +72,7 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>120</x>
       <y>100</y>
       <width>271</width>
       <height>22</height>
@@ -142,9 +142,9 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>200</x>
       <y>220</y>
-      <width>111</width>
+      <width>121</width>
       <height>31</height>
      </rect>
     </property>
