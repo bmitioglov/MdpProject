@@ -1,4 +1,4 @@
-#include "matrixgetter.h"
+#include "dbinfogetter.h"
 
 
 MatrixGetter::MatrixGetter()

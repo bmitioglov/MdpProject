@@ -8,10 +8,12 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets sql
 TEMPLATE = app
 TARGET = MdpProject
 # Input
-HEADERS += dialog.h mainwindow.h matrixgetter.h matrixgetterdao.h
+HEADERS += dialog.h mainwindow.h \
+    dbinfogetterdao.h \
+    dbinfogetter.h
 FORMS += dialog.ui mainwindow.ui
 SOURCES += dialog.cpp \
            main.cpp \
            mainwindow.cpp \
-           matrixgetter.cpp \
-           matrixgetterdao.cpp
+    dbinfogetter.cpp \
+    dbinfogetterdao.cpp

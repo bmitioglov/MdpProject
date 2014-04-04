@@ -1,0 +1,2 @@
+Всё кроме libmysql.dll, закинуть в C:\Qt\5.2.1\Src\qtbase\plugins\sqldrivers, а libmysql.dll, закинуть в C:\Qt\5.2.1\msvc2012\bin либо в C:\Windows. 
+Если не сработает то вот ссылка на статью по сборке mysql драйвера для qt: http://blog.adtl.cz/2009/09/05/qt-mysql-windows/

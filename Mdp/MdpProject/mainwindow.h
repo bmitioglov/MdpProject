@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QtWidgets/QMainWindow>
-#include "matrixgetter.h"
+#include "dbinfogetter.h"
 
 namespace Ui {
 class MainWindow;

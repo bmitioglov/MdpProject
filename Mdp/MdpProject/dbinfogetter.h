@@ -1,7 +1,7 @@
 #ifndef MATRIXGETTER_H
 #define MATRIXGETTER_H
 
-#include "matrixgetterdao.h"
+#include "dbinfogetterdao.h"
 
 namespace Ui {
     class MatrixGetter;

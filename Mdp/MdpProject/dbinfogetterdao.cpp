@@ -1,4 +1,4 @@
-#include "matrixgetterdao.h"
+#include "dbinfogetterdao.h"
 #include <QtSql/QSqlDatabase>
 #include <QDebug>
 #include <QSqlError>
