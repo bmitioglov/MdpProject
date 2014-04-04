@@ -38,6 +38,9 @@
      <height>80</height>
     </rect>
    </property>
+   <property name="currentIndex">
+    <number>1</number>
+   </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>Tab 1</string>
