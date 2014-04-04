@@ -29,7 +29,7 @@ void MatrixGetterDAO::getAllCountries(){
     printf("n: %d:",db.port());
     qDebug() << "error text = " + error.text();
     printf(error.text().toLocal8Bit().data());
-    cout << "lalala\n";
+    //std::cout << "lalala\n";
     QSqlQuery query;
        query.exec("SELECT * FROM properties");
        while (query.next()) {
