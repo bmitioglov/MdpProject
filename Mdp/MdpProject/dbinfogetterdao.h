@@ -3,14 +3,15 @@
 #include <QtSql/QSqlDatabase>
 
 namespace Ui{
-    class MatrixGetterDAO;
+    class DBInfoGetterDAO;
 }
 
-class MatrixGetterDAO
+class DBInfoGetterDAO
 {
 public:
-    MatrixGetterDAO();
-    void getAllCountries();
+    DBInfoGetterDAO();
+    void printAllCountries();
+    QList<QString> getAppropriateCountriesFromDB();
 };
 
 #endif // MATRIXGETTERDAO_H

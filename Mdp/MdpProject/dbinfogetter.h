@@ -2,16 +2,19 @@
 #define MATRIXGETTER_H
 
 #include "dbinfogetterdao.h"
+#include <QList>
 
 namespace Ui {
-    class MatrixGetter;
+    class DBInfoGetter;
 }
 
-class MatrixGetter
+class DBInfoGetter
 {
 public:
-    void getCountries();
-    MatrixGetter();
+    DBInfoGetter();
+    DBInfoGetterDAO* dbInfoGetterDAO;
+    void printAllCountries();
+    QList<QString> getAppropriateCountries();
 };
 
 #endif // MATRIXGETTER_H

@@ -1,12 +1,16 @@
 #include "dbinfogetter.h"
 
 
-MatrixGetter::MatrixGetter()
+DBInfoGetter::DBInfoGetter()
 {
-
+    dbInfoGetterDAO = &DBInfoGetterDAO();
 }
 
-void MatrixGetter::getCountries(){
-    MatrixGetterDAO* mgetterDAO = &MatrixGetterDAO();
-    mgetterDAO->getAllCountries();
+void DBInfoGetter::printAllCountries(){
+    dbInfoGetterDAO->printAllCountries();
 }
+
+QList<QString> DBInfoGetter::getAppropriateCountries(){
+    return dbInfoGetterDAO->getAppropriateCountriesFromDB();
+}
+

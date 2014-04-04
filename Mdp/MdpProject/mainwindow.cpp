@@ -19,8 +19,9 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     Dialog *d = new Dialog();
-    MatrixGetter* mgetter = new MatrixGetter();
-    mgetter->getCountries();
+    DBInfoGetter* dbinfogetter = new DBInfoGetter();
+    dbinfogetter->printAllCountries();
+    dbinfogetter->getAppropriateCountries();
     d -> show();
 }
 
