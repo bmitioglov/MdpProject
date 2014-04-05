@@ -5,6 +5,11 @@
 #include <QSqlQuery>
 
 
+DBInfoGetterDAO& DBInfoGetterDAO::getInstance()
+{
+    static DBInfoGetterDAO instance;
+    return instance;
+}
 
 DBInfoGetterDAO::DBInfoGetterDAO()
 {
@@ -32,19 +37,38 @@ void DBInfoGetterDAO::printAllCountries(){
     }
 }
 
-QList<QString> DBInfoGetterDAO::getAppropriateCountriesFromDB(){
+QList<QString> DBInfoGetterDAO::getAppropriateCountriesFromDB(QString property){
     QList<QString>* list = new QList<QString>();
     QSqlQuery query;
-    query.exec("SELECT * FROM countries");
+    query.prepare(QString("select Country_Name from country_properties where Property_ID in (")+
+               QString("select Property_ID from properties where Property_Name = :property)"));
+    query.bindValue(":property", property);
+    query.exec();
     while (query.next()) {
         QString name = query.value(0).toString();
         list->push_back(name);
     }
-
     QList<QString>::iterator it = list->begin();
+    qDebug() << "Подходящие страны: ";
+    if (list->size() == 0){
+        qDebug() << "Подходящие страны не найдены";
+    }
     while (it != list->end()) {
          qDebug() << "Element:" << *it;
          ++it;
     }
     return *list;
 }
+
+//Flightmatrix DBInfoGetterDAO::getFlightMatrix(){
+//    QList<QString>* list = new QList<QString>();
+//    QSqlQuery query;
+//    query.prepare(QString("select Country_Name from country_properties where Property_ID in (")+
+//               QString("select Property_ID from properties where Property_Name = :property)"));
+//    query.bindValue(":property", property);
+//    query.exec();
+//    while (query.next()) {
+//        QString name = query.value(0).toString();
+//        list->push_back(name);
+//    }
+//}

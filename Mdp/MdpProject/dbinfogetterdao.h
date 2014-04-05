@@ -1,6 +1,7 @@
 #ifndef MATRIXGETTERDAO_H
 #define MATRIXGETTERDAO_H
 #include <QtSql/QSqlDatabase>
+#include "flightmatrix.h"
 
 namespace Ui{
     class DBInfoGetterDAO;
@@ -8,10 +9,15 @@ namespace Ui{
 
 class DBInfoGetterDAO
 {
-public:
-    DBInfoGetterDAO();
-    void printAllCountries();
-    QList<QString> getAppropriateCountriesFromDB();
+    public:
+        static DBInfoGetterDAO& getInstance();
+        void printAllCountries();
+        QList<QString> getAppropriateCountriesFromDB(QString property);
+        Flightmatrix getFlightMatrix();
+    private:
+        DBInfoGetterDAO();
+        DBInfoGetterDAO(DBInfoGetterDAO const&);
+        void operator=(DBInfoGetterDAO const&);
 };
 
 #endif // MATRIXGETTERDAO_H

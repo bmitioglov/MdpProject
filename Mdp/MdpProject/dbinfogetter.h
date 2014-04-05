@@ -12,9 +12,8 @@ class DBInfoGetter
 {
 public:
     DBInfoGetter();
-    DBInfoGetterDAO* dbInfoGetterDAO;
     void printAllCountries();
-    QList<QString> getAppropriateCountries();
+    QList<QString> getAppropriateCountries(QString property);
 };
 
 #endif // MATRIXGETTER_H

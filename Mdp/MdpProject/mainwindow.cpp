@@ -20,8 +20,7 @@ void MainWindow::on_pushButton_clicked()
 {
     Dialog *d = new Dialog();
     DBInfoGetter* dbinfogetter = new DBInfoGetter();
-    dbinfogetter->printAllCountries();
-    dbinfogetter->getAppropriateCountries();
+    dbinfogetter->getAppropriateCountries(ui->comboBox->currentText());
     d -> show();
 }
 

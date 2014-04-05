@@ -3,14 +3,14 @@
 
 DBInfoGetter::DBInfoGetter()
 {
-    dbInfoGetterDAO = &DBInfoGetterDAO();
+
 }
 
 void DBInfoGetter::printAllCountries(){
-    dbInfoGetterDAO->printAllCountries();
+    DBInfoGetterDAO::getInstance().printAllCountries();
 }
 
-QList<QString> DBInfoGetter::getAppropriateCountries(){
-    return dbInfoGetterDAO->getAppropriateCountriesFromDB();
+QList<QString> DBInfoGetter::getAppropriateCountries(QString property){
+    return DBInfoGetterDAO::getInstance().getAppropriateCountriesFromDB(property);
 }
 

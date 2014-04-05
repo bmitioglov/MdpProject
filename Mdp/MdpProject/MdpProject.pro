@@ -10,10 +10,12 @@ TARGET = MdpProject
 # Input
 HEADERS += dialog.h mainwindow.h \
     dbinfogetterdao.h \
-    dbinfogetter.h
+    dbinfogetter.h \
+    flightmatrix.h
 FORMS += dialog.ui mainwindow.ui
 SOURCES += dialog.cpp \
            main.cpp \
            mainwindow.cpp \
     dbinfogetter.cpp \
-    dbinfogetterdao.cpp
+    dbinfogetterdao.cpp \
+    flightmatrix.cpp
