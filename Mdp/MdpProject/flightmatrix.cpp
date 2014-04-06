@@ -1,12 +1,13 @@
 #include "flightmatrix.h"
 
-Flightmatrix::Flightmatrix(int* matrix, QHash<int, QString> map)
+Flightmatrix::Flightmatrix(QVector< QVector< int > > matrix, QHash<int, QString> map)
 {
     this->map = map;
     this->matrix = matrix;
 }
 
-int* Flightmatrix::getMatrix(){
+
+QVector< QVector< int > > Flightmatrix::getMatrix(){
     return matrix;
 }
 
@@ -14,7 +15,7 @@ QHash<int, QString> Flightmatrix::getMap(){
     return map;
 }
 
-void Flightmatrix::setMatrix(int* m){
+void Flightmatrix::setMatrix(QVector< QVector< int > > m){
     matrix = m;
 }
 

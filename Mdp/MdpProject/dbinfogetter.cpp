@@ -14,3 +14,7 @@ QList<QString> DBInfoGetter::getAppropriateCountries(QString property){
     return DBInfoGetterDAO::getInstance().getAppropriateCountriesFromDB(property);
 }
 
+Flightmatrix DBInfoGetter::getFlightMatrix(){
+    return DBInfoGetterDAO::getInstance().getFlightMatrix();
+}
+

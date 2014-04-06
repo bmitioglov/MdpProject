@@ -14,6 +14,7 @@ public:
     DBInfoGetter();
     void printAllCountries();
     QList<QString> getAppropriateCountries(QString property);
+    Flightmatrix getFlightMatrix();
 };
 
 #endif // MATRIXGETTER_H
