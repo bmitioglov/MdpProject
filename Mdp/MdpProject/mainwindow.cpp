@@ -21,9 +21,9 @@ void MainWindow::on_pushButton_clicked()
     Dialog *d = new Dialog();
     DBInfoGetter* dbinfogetter = new DBInfoGetter();
     dbinfogetter->getAppropriateCountries(ui->comboBox->currentText(), "Страна");
-//    dbinfogetter->printAllCountries();
-    //dbinfogetter->getFlightMatrix();
-//    DBInfoGetterDAO::printFlightMatrix(dbinfogetter->getFlightMatrix().getMatrix());
+//    dbinfogetter->getFlightMatrix("Страна");
+    DBInfoGetterDAO::printFlightMatrix(dbinfogetter->getFlightMatrix("Деревня").getMatrix());
+//    DBInfoGetterDAO::printFlightMatrix(dbinfogetter->getFlightMatrix("Страна").getMatrix());
     d -> show();
 }
 

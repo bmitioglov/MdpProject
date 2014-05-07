@@ -40,7 +40,6 @@ void DBInfoGetterDAO::printAllCountries(){
 
 QList<QString> DBInfoGetterDAO::getAppropriateCountriesFromDB(QString property, QString site_type){
     QList<QString>* list = new QList<QString>();
-    QList<QString>* list2 = new QList<QString>();
     QSqlQuery query;
     query.prepare(QString("select Country_Name from country_properties where Property_ID in  ")+
                   QString("(select Property_ID from properties where Property_Name = :property )")+
@@ -74,7 +73,10 @@ Flightmatrix DBInfoGetterDAO::getFlightMatrix(QString site_type){
     int i = 0;
     int countriessize;
 
-    query1.exec("select * from countries");
+    query1.prepare("select * from countries where site_type = :site_type");
+    query1.bindValue(":site_type", site_type);
+    query1.exec();
+
     while (query1.next()) {
         QString name = query1.value(0).toString();
         hashmap->insert(i, name);
@@ -90,7 +92,7 @@ Flightmatrix DBInfoGetterDAO::getFlightMatrix(QString site_type){
         while (j < countriessize){
             twoDArray[k][j] = 0;
             if (k==j){
-                qDebug() << "1 SETTED!";
+//                qDebug() << "1 SETTED!";
                 twoDArray[k][j] = 1;
             }
             j++;
@@ -99,7 +101,10 @@ Flightmatrix DBInfoGetterDAO::getFlightMatrix(QString site_type){
         k++;
     }
 
-    query2.exec("select * from flights");
+    query2.prepare("select * from flights where site_type = :site_type");
+    query2.bindValue(":site_type", site_type);
+    query2.exec();
+
     while (query2.next()) {
         QString flightid = query2.value(0).toString();
         QString countryto = query2.value(1).toString();
@@ -113,7 +118,7 @@ Flightmatrix DBInfoGetterDAO::getFlightMatrix(QString site_type){
         //qDebug() << flightid << countryfrom << countryto << flighttime;
 
     }
-    qDebug() << "index = " << getIndexByName(*hashmap, "Россия");
+//    qDebug() << "index = " << getIndexByName(*hashmap, "Сент-Сирк");
 //    printFlightMatrix(twoDArray);
     return  *new Flightmatrix(twoDArray, *hashmap);
 }
@@ -136,9 +141,8 @@ void DBInfoGetterDAO::printFlightMatrix(QVector<QVector<int> > matrix){
         j = 0;
         i++;
     }
-    qDebug() << "element!!! 1 - 1 = " << matrix[1][1];
-    qDebug() << "element!!! 0 - 0 = " << matrix[0][0];
-    qDebug() << "element!!! 0 - 2 = " << matrix[0][2];
+//    qDebug() << "element!!! 1 - 1 = " << matrix[1][1];
+//    qDebug() << "element!!! 0 - 0 = " << matrix[0][0];
 }
 
 
