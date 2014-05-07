@@ -12,8 +12,8 @@ class DBInfoGetterDAO
     public:
         static DBInfoGetterDAO& getInstance();
         void printAllCountries();
-        QList<QString> getAppropriateCountriesFromDB(QString property);
-        Flightmatrix getFlightMatrix();
+        QList<QString> getAppropriateCountriesFromDB(QString property, QString site_type);
+        Flightmatrix getFlightMatrix(QString site_type);
         static void printFlightMatrix(QVector< QVector< int > > matrix);
     private:
         DBInfoGetterDAO();

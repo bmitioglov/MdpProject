@@ -13,8 +13,8 @@ class DBInfoGetter
 public:
     DBInfoGetter();
     void printAllCountries();
-    QList<QString> getAppropriateCountries(QString property);
-    Flightmatrix getFlightMatrix();
+    QList<QString> getAppropriateCountries(QString property, QString site_type);
+    Flightmatrix getFlightMatrix(QString site_type);
 };
 
 #endif // MATRIXGETTER_H
