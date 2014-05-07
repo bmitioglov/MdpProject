@@ -4,7 +4,7 @@ USE `mdpschema`;
 --
 -- Host: localhost    Database: mdpschema
 -- ------------------------------------------------------
--- Server version	5.6.16
+-- Server version	5.6.17-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,6 +26,7 @@ DROP TABLE IF EXISTS `countries`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `countries` (
   `Country_Name` varchar(45) NOT NULL DEFAULT '',
+  `site_type` text,
   PRIMARY KEY (`Country_Name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=cp1251;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -36,7 +37,7 @@ CREATE TABLE `countries` (
 
 LOCK TABLES `countries` WRITE;
 /*!40000 ALTER TABLE `countries` DISABLE KEYS */;
-INSERT INTO `countries` VALUES ('Австралия'),('Америка'),('Англия'),('Беларусь'),('Болгария'),('Германия'),('Греция'),('Испания'),('Казахстан'),('Норвегия'),('Россия');
+INSERT INTO `countries` VALUES ('Австралия','Страна'),('Америка','Страна'),('Англия','Страна'),('Беларусь','Страна'),('Болгария','Страна'),('Германия','Страна'),('Греция','Страна'),('Испания','Страна'),('Казахстан','Страна'),('Норвегия','Страна'),('Россия','Страна');
 /*!40000 ALTER TABLE `countries` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-26 23:53:10
+-- Dump completed on 2014-05-08  3:07:01
