@@ -38,12 +38,17 @@ void DBInfoGetterDAO::printAllCountries(){
     }
 }
 
-QList<QString> DBInfoGetterDAO::getAppropriateCountriesFromDB(QString property){
+QList<QString> DBInfoGetterDAO::getAppropriateCountriesFromDB(QString property, QString site_type){
     QList<QString>* list = new QList<QString>();
+    QList<QString>* list2 = new QList<QString>();
     QSqlQuery query;
-    query.prepare(QString("select Country_Name from country_properties where Property_ID in (")+
-               QString("select Property_ID from properties where Property_Name = :property)"));
+    query.prepare(QString("select Country_Name from country_properties where Property_ID in  ")+
+                  QString("(select Property_ID from properties where Property_Name = :property )")+
+                  QString("and Country_Name in (select Country_Name from countries where site_type= :site_type)"));
+    qDebug() << "BIND1 = " <<property;
+    qDebug() << "BIND2 = " <<site_type;
     query.bindValue(":property", property);
+    query.bindValue(":site_type", site_type);
     query.exec();
     while (query.next()) {
         QString name = query.value(0).toString();
@@ -61,7 +66,7 @@ QList<QString> DBInfoGetterDAO::getAppropriateCountriesFromDB(QString property){
     return *list;
 }
 
-Flightmatrix DBInfoGetterDAO::getFlightMatrix(){
+Flightmatrix DBInfoGetterDAO::getFlightMatrix(QString site_type){
     QHash<int, QString>* hashmap = new QHash<int, QString>();
 
     QSqlQuery query1;
