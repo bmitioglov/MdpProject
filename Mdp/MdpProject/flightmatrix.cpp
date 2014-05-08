@@ -6,6 +6,10 @@ Flightmatrix::Flightmatrix(QVector< QVector< int > > matrix, QHash<int, QString>
     this->matrix = matrix;
 }
 
+Flightmatrix::Flightmatrix(){
+
+}
+
 
 QVector< QVector< int > > Flightmatrix::getMatrix(){
     return matrix;

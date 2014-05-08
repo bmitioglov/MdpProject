@@ -7,6 +7,7 @@
 class Flightmatrix
 {
 public:
+    Flightmatrix();
     Flightmatrix(QVector< QVector< int > > matrix, QHash<int, QString> map);
     QVector< QVector< int > > matrix;
     QHash<int, QString> map;

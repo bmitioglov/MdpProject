@@ -11,11 +11,19 @@ TARGET = MdpProject
 HEADERS += dialog.h mainwindow.h \
     dbinfogetterdao.h \
     dbinfogetter.h \
-    flightmatrix.h
+    flightmatrix.h \
+    graph.h \
+    country.h \
+    city.h \
+    village.h
 FORMS += dialog.ui mainwindow.ui
 SOURCES += dialog.cpp \
            main.cpp \
            mainwindow.cpp \
     dbinfogetter.cpp \
     dbinfogetterdao.cpp \
-    flightmatrix.cpp
+    flightmatrix.cpp \
+    graph.cpp \
+    country.cpp \
+    city.cpp \
+    village.cpp
