@@ -6,3 +6,6 @@ Mdp/MdpProject/MdpProject.pro.user.1.3
 Mdp/build-release
 Mdp/build-MdpProject-Desktop_Qt_5_2_1_MinGW_32bit-Debug/
 Mdp/MdpProject/MdpProject.pro
+Mdp/build-MdpProject-Desktop_Qt_5_2_1_MinGW_32bit-Release/Makefile.Release
+Mdp/build-MdpProject-Desktop_Qt_5_2_1_MinGW_32bit-Release/Makefile.Debug
+Mdp/build-MdpProject-Desktop_Qt_5_2_1_MinGW_32bit-Release/
