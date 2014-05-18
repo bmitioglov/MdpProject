@@ -6,8 +6,8 @@ Allocator<Location>::Allocator()
 }
 
 template <class Location>
-Location *Allocator<Location>::pointer() {
-    Location *loc = new Location();
+graph<Location> *Allocator<Location>::pointer() {
+    graph<Location> *loc = new graph<Location>();
     return loc;
 }
 

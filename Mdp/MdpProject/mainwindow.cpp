@@ -29,28 +29,59 @@ void MainWindow::on_pushButton_clicked()
     drawGraph *dg = new drawGraph();
 
     if (ui->comboBox->currentText() == "По странам"){
-        graph<Country>* graph1 = new graph<Country>();
-        DBInfoGetterDAO::printFlightMatrix(graph1->getFlightMatrix().getMatrix());
-        dg->append("Россия");
-        dg->append("Белоруссия");
-        dg->append("Украина");
+        Allocator<Country> *al     = new Allocator<Country>();
+        graph<Country> *v = al->pointer();
+        DBInfoGetterDAO::printFlightMatrix(v->getFlightMatrix().getMatrix());
+
+        QString curr_val = ui->comboBox_2->currentText();
+        int index = v->getFlightMatrix().getMap().key(curr_val);
+
+        QVector<int> paths = v->getFlightMatrix().getMatrix()[index];
+
+        for (int i = 0; i < paths.length(); ++i) {
+            if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+        }
+
         dg->draw();
         dg->show();
+        delete dg;
     }
     else if (ui->comboBox->currentText()== "По деревням"){
-        Allocator<Village>   *al     = new Allocator<Village>();
-        graph<Village>       *graph1 = new graph<Village>();
-        DBInfoGetterDAO::printFlightMatrix(graph1->getFlightMatrix().getMatrix());
-        dg->append("Канны");
-        dg->append("Куршевель");
-        dg->append("Гоа");
+        Allocator<Village> *al = new Allocator<Village>();
+        graph<Village> *v = al->pointer();
+        DBInfoGetterDAO::printFlightMatrix(v->getFlightMatrix().getMatrix());
+
+        QString curr_val = ui->comboBox_2->currentText();
+        int index = v->getFlightMatrix().getMap().key(curr_val);
+
+        QVector<int> paths = v->getFlightMatrix().getMatrix()[index];
+
+        for (int i = 0; i < paths.length(); ++i) {
+            if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+        }
+
         dg->draw();
         dg->show();
+        delete dg;
     }
     else
     if (ui->comboBox->currentText()== "По городам"){
-            graph<City>* graph1 = new graph<City>();
-            DBInfoGetterDAO::printFlightMatrix(graph1->getFlightMatrix().getMatrix());
+            Allocator<City> *al     = new Allocator<City>();
+            graph<City> *v = al->pointer();
+            DBInfoGetterDAO::printFlightMatrix(v->getFlightMatrix().getMatrix());
+
+            QString curr_val = ui->comboBox_2->currentText();
+            int index = v->getFlightMatrix().getMap().key(curr_val);
+
+            QVector<int> paths = v->getFlightMatrix().getMatrix()[index];
+
+            for (int i = 0; i < paths.length(); ++i) {
+                if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+            }
+
+            dg->draw();
+            dg->show();
+            delete dg;
     }
     else
     {

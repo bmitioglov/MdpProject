@@ -4,13 +4,14 @@
 #include "city.h"
 #include "village.h"
 #include "country.h"
+#include "graph.h"
 
 template <class Location>
 class Allocator
 {
 public:
     Allocator();
-    Location *pointer();
+    graph<Location> *pointer();
 };
 
 #endif // ALLOCATOR_H
