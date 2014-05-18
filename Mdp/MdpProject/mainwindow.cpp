@@ -5,6 +5,7 @@
 #include "country.h"
 #include "village.h"
 #include "drawgraph.h"
+#include "allocator.h"
 #include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -37,7 +38,8 @@ void MainWindow::on_pushButton_clicked()
         dg->show();
     }
     else if (ui->comboBox->currentText()== "По деревням"){
-        graph<Village>* graph1 = new graph<Village>();
+        Allocator<Village>   *al     = new Allocator<Village>();
+        graph<Village>       *graph1 = new graph<Village>();
         DBInfoGetterDAO::printFlightMatrix(graph1->getFlightMatrix().getMatrix());
         dg->append("Канны");
         dg->append("Куршевель");

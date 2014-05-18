@@ -5,7 +5,6 @@
 template <class Location>
 graph<Location>::graph()
 {
-
     this->location = new Location();
     DBInfoGetter* dbinfogetter = new DBInfoGetter();
     this->fmatrix = dbinfogetter->getFlightMatrix(location->getType());
