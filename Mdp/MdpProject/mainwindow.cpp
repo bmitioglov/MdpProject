@@ -7,6 +7,13 @@
 #include "village.h"
 #include <QDebug>
 
+#include <QApplication>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsTextItem>
+#include <QPointF>
+#include <QVector>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -26,32 +33,60 @@ void MainWindow::on_pushButton_clicked()
 {
     Dialog *d = new Dialog();
     DBInfoGetter* dbinfogetter = new DBInfoGetter();
-//    dbinfogetter->getAppropriateCountries(ui->comboBox->currentText(), "Страна");
-
 
     if (ui->comboBox->currentText() == "По странам"){
         graph<Country>* graph1 = new graph<Country>();
         DBInfoGetterDAO::printFlightMatrix(graph1->getFlightMatrix().getMatrix());
-        d -> show();
     }
     else
-    if (ui->comboBox->currentText()=="По деревням"){
+    if (ui->comboBox->currentText()== "По деревням"){
         graph<Village>* graph1 = new graph<Village>();
         DBInfoGetterDAO::printFlightMatrix(graph1->getFlightMatrix().getMatrix());
-        d -> show();
     }
     else
-    if (ui->comboBox->currentText()=="По городам"){
+    if (ui->comboBox->currentText()== "По городам"){
             graph<City>* graph1 = new graph<City>();
             DBInfoGetterDAO::printFlightMatrix(graph1->getFlightMatrix().getMatrix());
-            d -> show();
     }
     else
     {
         ui->label_4->setText("Выберите тип путешествия, пожалуйста");
     }
 
-//    DBInfoGetterDAO::printFlightMatrix(dbinfogetter->getFlightMatrix("Страна").getMatrix());
+    // Drawing
+
+    QVector <QPointF> points;
+    QVector <QLineF> lines;
+    QVector <QString> countries;
+    countries.append("Russia");
+    countries.append("USA");
+    countries.append("123");
+    countries.append("2222");
+    countries.append("233333");
+
+    for(int i = 0; i<countries.size() ; i++)
+       points.append(QPointF(i*100, 100));
+
+    QGraphicsView * view = new QGraphicsView();
+    QGraphicsScene * scene = new QGraphicsScene();
+    view->setScene(scene);
+    view->setWindowTitle("Варианты поездки");
+    QGraphicsTextItem *textItem = new QGraphicsTextItem("SPB");
+     textItem->setPos(100, 20);
+    scene->addEllipse(100, 0, 50, 50);
+
+    scene->addItem(textItem);
+
+    for(int i = 0; i< points.size(); i++) {
+        scene->addEllipse(points[i].x(), points[i].y(), 75, 50);
+        scene->addLine(125,50, points[i].x()+25,points[i].y() );
+        QGraphicsTextItem *textItem = new QGraphicsTextItem(countries[i]);
+        textItem->setPos(points[i].x()+10, points[i].y()+10);
+        scene->addItem(textItem);
+    }
+
+    // Show the view
+    view->show();
 
 }
 
