@@ -7,6 +7,7 @@
 #include "drawgraph.h"
 #include "allocator.h"
 #include <QDebug>
+#include <QMessageBox>
 
 using namespace HolidayHelper;
 using namespace Vertex;
@@ -29,7 +30,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    DBInfoGetter* dbinfogetter = new DBInfoGetter();
     drawGraph *dg = new drawGraph();
 
     if (ui->comboBox->currentText() == "По странам"){
@@ -40,10 +40,19 @@ void MainWindow::on_pushButton_clicked()
         QString curr_val = ui->comboBox_2->currentText();
         int index = v->getFlightMatrix().getMap().key(curr_val);
 
-        QVector<int> paths = v->getFlightMatrix().getMatrix()[index];
+        QVector<int> paths;
+        if (index > v->getFlightMatrix().getMatrix().length()) throw;
 
-        for (int i = 0; i < paths.length(); ++i) {
-            if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+        try {
+            paths = v->getFlightMatrix().getMatrix()[index];
+
+            for (int i = 0; i < paths.length(); ++i) {
+                if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+            }
+        }
+        catch (int) {
+            QMessageBox::critical(0, tr("Detection error"), tr("Error at creating a vector!"));
+            return;
         }
 
         dg->draw();
@@ -58,10 +67,19 @@ void MainWindow::on_pushButton_clicked()
         QString curr_val = ui->comboBox_2->currentText();
         int index = v->getFlightMatrix().getMap().key(curr_val);
 
-        QVector<int> paths = v->getFlightMatrix().getMatrix()[index];
+        QVector<int> paths;
+        if (index > v->getFlightMatrix().getMatrix().length()) throw;
 
-        for (int i = 0; i < paths.length(); ++i) {
-            if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+        try {
+            paths = v->getFlightMatrix().getMatrix()[index];
+
+            for (int i = 0; i < paths.length(); ++i) {
+                if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+            }
+        }
+        catch (int) {
+            QMessageBox::critical(0, tr("Detection error"), tr("Error at creating a vector!"));
+            return;
         }
 
         dg->draw();
@@ -77,10 +95,19 @@ void MainWindow::on_pushButton_clicked()
             QString curr_val = ui->comboBox_2->currentText();
             int index = v->getFlightMatrix().getMap().key(curr_val);
 
-            QVector<int> paths = v->getFlightMatrix().getMatrix()[index];
+            QVector<int> paths;
+            if (index > v->getFlightMatrix().getMatrix().length()) throw;
 
-            for (int i = 0; i < paths.length(); ++i) {
-                if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+            try {
+                paths = v->getFlightMatrix().getMatrix()[index];
+
+                for (int i = 0; i < paths.length(); ++i) {
+                    if (paths[i] != 0) dg->append(v->getFlightMatrix().getMap().value(paths[i]));
+                }
+            }
+            catch (int) {
+                QMessageBox::critical(0, tr("Detection error"), tr("Error at creating a vector!"));
+                return;
             }
 
             dg->draw();
