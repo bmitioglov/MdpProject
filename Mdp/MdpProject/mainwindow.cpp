@@ -6,6 +6,7 @@
 #include "village.h"
 #include "drawgraph.h"
 #include "allocator.h"
+#include "invariant.h"
 #include <QDebug>
 #include <QMessageBox>
 
@@ -33,12 +34,15 @@ void MainWindow::on_pushButton_clicked()
     drawGraph *dg = new drawGraph();
 
     if (ui->comboBox->currentText() == "По странам"){
+        Invariant<Country> *inv = new Invariant<Country>();
         Allocator<Country> *al     = new Allocator<Country>();
         graph<Country> *v = al->pointer();
         DBInfoGetterDAO::printFlightMatrix(v->getFlightMatrix().getMatrix());
+        inv->checkLoc(v);
 
         QString curr_val = ui->comboBox_2->currentText();
         int index = v->getFlightMatrix().getMap().key(curr_val);
+        inv->checkMatrix(v);
 
         QVector<int> paths;
         if (index > v->getFlightMatrix().getMatrix().length()) throw;
@@ -60,12 +64,15 @@ void MainWindow::on_pushButton_clicked()
         delete dg;
     }
     else if (ui->comboBox->currentText()== "По деревням"){
+        Invariant<Village> *inv = new Invariant<Village>();
         Allocator<Village> *al = new Allocator<Village>();
         graph<Village> *v = al->pointer();
         DBInfoGetterDAO::printFlightMatrix(v->getFlightMatrix().getMatrix());
+        inv->checkLoc(v);
 
         QString curr_val = ui->comboBox_2->currentText();
         int index = v->getFlightMatrix().getMap().key(curr_val);
+        inv->checkMatrix(v);
 
         QVector<int> paths;
         if (index > v->getFlightMatrix().getMatrix().length()) throw;
@@ -88,12 +95,15 @@ void MainWindow::on_pushButton_clicked()
     }
     else
     if (ui->comboBox->currentText()== "По городам"){
+            Invariant<City> *inv = new Invariant<City>();
             Allocator<City> *al     = new Allocator<City>();
             graph<City> *v = al->pointer();
             DBInfoGetterDAO::printFlightMatrix(v->getFlightMatrix().getMatrix());
+            inv->checkLoc(v);
 
             QString curr_val = ui->comboBox_2->currentText();
             int index = v->getFlightMatrix().getMap().key(curr_val);
+            inv->checkMatrix(v);
 
             QVector<int> paths;
             if (index > v->getFlightMatrix().getMatrix().length()) throw;
