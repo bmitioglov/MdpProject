@@ -1,5 +1,7 @@
 #include "city.h"
 
+using namespace Vertex;
+
 City::City()
 {
 }

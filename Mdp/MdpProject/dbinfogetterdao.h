@@ -3,6 +3,8 @@
 #include <QtSql/QSqlDatabase>
 #include "flightmatrix.h"
 
+namespace DB {
+
 namespace Ui{
     class DBInfoGetterDAO;
 }
@@ -22,5 +24,7 @@ class DBInfoGetterDAO
         int getIndexByName(QHash<int, QString> map, QString name);
 
 };
+
+}
 
 #endif // MATRIXGETTERDAO_H

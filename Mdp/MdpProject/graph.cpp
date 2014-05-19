@@ -2,6 +2,9 @@
 #include "dbinfogetter.h"
 #include <QDebug>
 
+using namespace Vertex;
+using namespace DB;
+
 template <class Location>
 graph<Location>::graph()
 {

@@ -1,5 +1,7 @@
 #include "drawgraph.h"
 
+using namespace HolidayHelper;
+
 drawGraph::drawGraph() {
     view = new QGraphicsView();
     scene = new QGraphicsScene();

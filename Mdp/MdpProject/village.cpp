@@ -1,5 +1,7 @@
 #include "village.h"
 
+using namespace Vertex;
+
 Village::Village()
 {
 }

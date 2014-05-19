@@ -1,5 +1,7 @@
 #include "country.h"
 
+using namespace Vertex;
+
 Country::Country()
 {
 }

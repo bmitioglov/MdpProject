@@ -5,6 +5,7 @@
 #include <QSqlQuery>
 #include <QTextStream>
 
+using namespace DB;
 
 DBInfoGetterDAO& DBInfoGetterDAO::getInstance()
 {

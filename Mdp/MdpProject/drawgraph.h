@@ -8,6 +8,8 @@
 #include <QPointF>
 #include <QVector>
 
+namespace HolidayHelper {
+
 class drawGraph
 {
 public:
@@ -22,5 +24,7 @@ public:
     void show();
     void append(QString vertex);
 };
+
+}
 
 #endif // DRAWGRAPH_H

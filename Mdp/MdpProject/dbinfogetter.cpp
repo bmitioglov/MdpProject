@@ -1,5 +1,6 @@
 #include "dbinfogetter.h"
 
+using namespace DB;
 
 DBInfoGetter::DBInfoGetter()
 {

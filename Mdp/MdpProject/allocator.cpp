@@ -1,5 +1,8 @@
 #include "allocator.h"
 
+using namespace HolidayHelper;
+using namespace Vertex;
+
 template <class Location>
 Allocator<Location>::Allocator()
 {

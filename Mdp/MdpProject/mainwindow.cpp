@@ -8,6 +8,9 @@
 #include "allocator.h"
 #include <QDebug>
 
+using namespace HolidayHelper;
+using namespace Vertex;
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -17,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->pushButton->setEnabled(false);
 }
 
+using namespace DB;
 
 MainWindow::~MainWindow()
 {

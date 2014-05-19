@@ -4,6 +4,8 @@
 #include "dbinfogetterdao.h"
 #include <QList>
 
+namespace DB {
+
 namespace Ui {
     class DBInfoGetter;
 }
@@ -16,5 +18,7 @@ public:
     QList<QString> getAppropriateCountries(QString property, QString site_type);
     Flightmatrix getFlightMatrix(QString site_type);
 };
+
+}
 
 #endif // MATRIXGETTER_H
